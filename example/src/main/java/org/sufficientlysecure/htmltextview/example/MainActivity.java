@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
 
         @Override
         public void onClick(View widget) {
+
             Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
             intent.putExtra(EXTRA_TABLE_HTML, getTableHtml());
             startActivity(intent);
@@ -54,11 +55,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         HtmlTextView textView = (HtmlTextView) findViewById(R.id.html_text);
-
-        //text.setRemoveFromHtmlSpace(false); // default is true
-        //text.setRemoveFromHtmlSpace(false); // default is true
-        //text.setRemoveFromHtmlSpace(false); // default is true
-        //text.setRemoveFromHtmlSpace(false); // default is true
         textView.setClickableTableSpan(new ClickableTableSpanImpl());
         DrawTableLinkSpan drawTableLinkSpan = new DrawTableLinkSpan();
 //        drawTableLinkSpan.setTableLinkText("[tap for table]");
